@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/minimal-notebook:4.0
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
