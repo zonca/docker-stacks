@@ -2,6 +2,8 @@ FROM jupyter/minimal-notebook:4.0
 
 MAINTAINER Jupyter Project <jupyter@googlegroups.com>
 
+USER root
+
 # R pre-requisites
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
