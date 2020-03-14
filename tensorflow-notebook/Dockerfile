@@ -9,3 +9,9 @@ RUN pip install --quiet --no-cache-dir \
     'tensorflow==2.2.0' && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
+
+USER root
+
+RUN yum install -y which
+
+USER $NB_UID
