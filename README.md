@@ -8,3 +8,18 @@ Don't have autobuild yet, currently just pushing to: <https://hub.docker.com/rep
 I am interested in the `tensorflow` image so I have built it and pushed it to DockerHub with the `tensorflow` tag.
 
 In the future possibly setup autobuild to build all the requirements, i.e. `base-notebook`, `minimal-notebook`, `scipy-notebook`.
+
+How to build the images:
+
+```
+make build/base-notebook
+make build/minimal-notebook
+make build/scipy-notebook
+make build/tensorflow-notebook
+```
+
+or
+
+```
+make build-all
+```
