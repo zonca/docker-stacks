@@ -23,3 +23,18 @@ or
 ```
 make build-all
 ```
+
+Make sure the machine has `pass`
+
+```
+sudo apt install pass
+```
+
+Then:
+
+```
+docker login
+export VERSION=2020.07
+docker tag zonca/jupyter-docker-stacks-centos7  zonca/jupyter-docker-stacks-centos7:tensorflow-$VERSION
+docker push zonca/jupyter-docker-stacks-centos7:tensorflow-$VERSION
+```
