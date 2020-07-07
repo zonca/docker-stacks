@@ -1,21 +1,19 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-ARG BASE_CONTAINER=jupyter/base-notebook
-FROM $BASE_CONTAINER
+FROM jupyter/base-notebook
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
 
 USER root
 
 # Install all OS dependencies for fully functional notebook server
-RUN apt-get update && apt-get install -yq --no-install-recommends \
-    build-essential \
-    emacs-nox \
-    vim-tiny \
-    git \
+RUN yum install -y \
     inkscape \
     jed \
     libsm6 \
+    gcc \
+    gcc-c++ \
+    make \
     libxext-dev \
     libxrender1 \
     lmodern \
@@ -30,8 +28,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     # ----
     tzdata \
     unzip \
-    nano \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    nano && yum -y clean all
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_UID
